@@ -34,7 +34,6 @@
 </head>
 
 <body>
-Hello Git!
     <!--::header part start::-->
     <header class="main_menu home_menu">
         <div class="container">
