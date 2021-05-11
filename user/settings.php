@@ -8,8 +8,8 @@ if (strlen($_SESSION['hmmsuid']==0)) {
     if(isset($_POST['submit']))
 {
 $uid=$_SESSION['hmmsuid'];
-$cpassword=md5($_POST['currentpassword']);
-$newpassword=md5($_POST['newpassword']);
+$cpassword=($_POST['currentpassword']);
+$newpassword=($_POST['newpassword']);
 $sql ="SELECT ID FROM tbluser WHERE ID=:uid and Password=:cpassword";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':uid', $uid, PDO::PARAM_STR);
@@ -38,6 +38,8 @@ echo '<script>alert("Неверный текущий пароль")</script>';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- $cpassword=md5($_POST['currentpassword']);
+$newpassword=md5($_POST['newpassword']); #Если вставить эти строки вместо текущих, то пароли будут сохраняться в БД в зашифрованном виде!-->
     
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <title>Смена пароля</title>

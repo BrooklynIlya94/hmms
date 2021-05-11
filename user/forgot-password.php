@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
   {
     $email=$_POST['email'];
 $mobile=$_POST['mobile'];
-$newpassword=md5($_POST['newpassword']);
+$newpassword=($_POST['newpassword']);
   $sql ="SELECT Email FROM tbluser WHERE Email=:email and MobileNumber=:mobile";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -34,6 +34,8 @@ echo "<script>alert('Идентификатор электронной почт�
 <html lang="en">
 <!-- login-->
 <head>
+    <!-- $newpassword=md5($_POST['newpassword']); #Если вставить эту строку вместо такой текущей, то пароли будут сохраняться в БД в зашифрованном виде! -->
+    
     <title>Система мониторинга здоровья || Восстановление пароля</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">

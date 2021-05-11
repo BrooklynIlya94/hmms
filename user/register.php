@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
     $fname=$_POST['fname'];
     $mobno=$_POST['mobno'];
     $email=$_POST['email'];
-    $password=md5($_POST['password']);
+    $password=($_POST['password']);
     $ret="select Email, MobileNumber from tbluser where Email=:email || MobileNumber=:mobno";
     $query= $dbh -> prepare($ret);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -45,6 +45,7 @@ echo "<script>alert('Почта или номер телефона уже исп
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- $password=md5($_POST['password']); #Если вставить эту строку вместо текущей, то пароли в БД будут сохраняться в зашифрованном виде -->
    
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <title>Система мониторинга здоровья || Страница регистрации</title>
