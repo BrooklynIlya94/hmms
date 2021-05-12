@@ -6,7 +6,7 @@ include('includes/dbconnection.php');
 if(isset($_POST['login'])) 
   {
     $username=$_POST['username'];
-    $password=md5($_POST['password']);
+    $password=($_POST['password']);
     $sql ="SELECT ID FROM tbladmin WHERE UserName=:username and Password=:password";
     $query=$dbh->prepare($sql);
     $query-> bindParam(':username', $username, PDO::PARAM_STR);

@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
   {
     $email=$_POST['email'];
 $mobile=$_POST['mobile'];
-$newpassword=md5($_POST['newpassword']);
+$newpassword=($_POST['newpassword']);
   $sql ="SELECT Email FROM tbladmin WHERE Email=:email and MobileNumber=:mobile";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -71,7 +71,7 @@ return true;
                             <input type="text" class="form-control" placeholder="7(999)-999-99-99" name="mobile" required="true" maxlength="20" pattern="+[0-9]">
                         </div>
                         <div class="form-group">
-                            <label>Новы пароль:</label>
+                            <label>Новый пароль:</label>
                             <input type="password" placeholder="Пароль от 8 до 20 символов" name="newpassword" required="true" class="form-control">
                         </div>
                         <div class="form-group">

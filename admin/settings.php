@@ -9,8 +9,8 @@ if (strlen($_SESSION['hmmsaid']==0)) {
 if(isset($_POST['submit']))
 {
 $adminid=$_SESSION['hmmsaid'];
-$cpassword=md5($_POST['currentpassword']);
-$newpassword=md5($_POST['newpassword']);
+$cpassword=($_POST['currentpassword']);
+$newpassword=($_POST['newpassword']);
 $sql ="SELECT ID FROM tbladmin WHERE ID=:adminid and Password=:cpassword";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':adminid', $adminid, PDO::PARAM_STR);

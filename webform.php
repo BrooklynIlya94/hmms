@@ -165,18 +165,7 @@
 <!--::blog_part end::-->
 
 <!-- footer part start-->
-<footer class="footer-area">
-    <div class="copyright_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
-                <p style="color:navajowhite">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Система мониторинга здоровья <i class="ti-heart" aria-hidden="true"></i></p>
-                </p>
 
-            </div>
-        </div>
-    </div>
-</footer>
 
 
 <!-- footer part end-->
@@ -200,6 +189,17 @@
 <!-- custom js -->
 <script src="js/custom.js"></script>
 
-</body>
+<footer class="footer-area">
+    <div class="copyright_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <p class="footer-text m-0 col-lg-8 col-md-12">
+                <p style="color:navajowhite">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Система мониторинга здоровья <i class="ti-heart" aria-hidden="true"></i></p>
+                </p>
 
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
 </html>
